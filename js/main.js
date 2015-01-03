@@ -112,8 +112,11 @@ function connect(c) {
     	// Decrypt data (message)
       decryptedMsg = cryptico.decrypt(data, RSAkey);
       decryptedMsg.plaintext = escapeHtml(decode(decryptedMsg.plaintext));
+
       messages.append('<div class="message_block partner"><span class="date">' + (new Date()).getHours() + ':' + addZero(new Date().getMinutes()) + '</span> <span class="peer">Partner:</span><div class="message">' + decryptedMsg.plaintext.replace(/([^>])\n/g, '$1<br/>') +
         '</div></div>');
+         $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+
       // play notification
       notification.play();
         });
@@ -172,9 +175,12 @@ $(document).ready(function(PublicKeyString) {
       	var encryptedMsg = cryptico.encrypt(encode(msg), window.PublicKeyString);
        
 
+
         c.send(encryptedMsg.cipher);
         $c.find('.messages').append('<div class="message_block you"><span class="date">' + (new Date()).getHours() + ':' + addZero(new Date().getMinutes()) + '</span> <span class="me">Me:</span><div class="message">' + escapeHtml(msg).replace(/([^>])\n/g, '$1<br/>')
           + '</div></div>');
+         $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+        
       }
     
     
