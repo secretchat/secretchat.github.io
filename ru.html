@@ -43,7 +43,17 @@ var vars = getUrlVars();
         <img src="img/logo.png" width="110px" alt="logo" />
         <h1>SecretChat</h1>
         <div class="main_desc">Анонимный способ быстро и безопасно вести переписку. Без регистрации, одним щелчком мыши.</div>
-
+        <div  class="loading">
+        Загрузка...<br/>
+          <div id="circleG" style="margin-top:8px;">
+<div id="circleG_1" class="circleG">
+</div>
+<div id="circleG_2" class="circleG">
+</div>
+<div id="circleG_3" class="circleG">
+</div>
+</div>
+        </div>
         <div class="connection_box"> 
       <span style="margin-left:12px;">Ваш Secret ID:</span> 
     <input id="own_id" type="text" onclick="this.select();" readonly="readonly" value="Генерируется... ждите..." /> <a id="copy_own_id"   data-clipboard-target="own_id">Copy</a><br>
