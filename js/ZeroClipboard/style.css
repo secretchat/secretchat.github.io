@@ -1,0 +1,12 @@
+body {
+	margin-top: 150px;
+}
+nav a {
+	font-family: Arial;
+	color: #666;
+	text-decoration: underline;
+	font-size: 22px;
+}
+nav a:hover {
+	color: #000;
+}

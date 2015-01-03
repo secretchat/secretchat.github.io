@@ -1,0 +1,107 @@
+<!DOCTYPE HTML> 
+<html lang="en"> 
+<head>
+<title>SecretChat</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<meta http-equiv="Content-Language" content="en-us"> 
+<link href="css/style.css" rel="stylesheet" type="text/css">
+ <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- Bootstap-->
+<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+
+<script type="text/javascript">
+function getUrlVars() {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+        {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+    return vars;
+}
+
+// vars in url
+var vars = getUrlVars();
+</script>
+</head> 
+<body>
+
+      <div class="container">
+
+    <div id="index">
+          <div class="popup">Email: <a href="mailto:serewann@gmail.com">serewann@gmail.com</a><br/>
+          VK profile: <a target="_blank" href="//vk.com/taras_serevann">Taras Serevann</a><br/><br/><a class="btn btn-primary" href="#" onclick="$('.popup').hide();" role="button">Close</a></div> 
+
+            <div class="side"><div class="lang">in English | <a style="text-decoration:underline;" href="ru.html">На русском</a></div><div class="menu"><a target="_blank" href="//vk.com/secretchat"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Community</a><br/><a href="mailto:serewann@gmail.com" onclick="$('.popup').show();"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Contact us</a></div></div>
+
+<div class="block">
+
+        <img src="img/logo.png" width="110px" alt="logo" />
+        <h1>SecretChat</h1>
+        <div class="main_desc">An anonymous way to quickly and safely transmit your messages to the recipient. Without registration, in just one click.</div>
+        <div  class="loading">
+        Loading...<br/>
+          <div id="circleG" style="margin-top:8px;">
+<div id="circleG_1" class="circleG">
+</div>
+<div id="circleG_2" class="circleG">
+</div>
+<div id="circleG_3" class="circleG">
+</div>
+</div>
+        </div>
+        <div class="connection_box"> 
+      <span style="margin-left:-8px;">Your Secret ID:</span> 
+    <input id="own_id" type="text" onclick="this.select();" readonly="readonly" value="Generating... wait..." /> <a id="copy_own_id"   data-clipboard-target="own_id">Copy</a><br>
+    Connect to ID: <input id="another_id" placeholder="Enter someone else's ID" type="text" value="" /> <input type="submit" style="width:90px;" class="action" id="connect"  value="Connect"><br/>
+    
+
+
+    </div>
+      </div>
+<div class="row">
+      <div class="col-sm-4">
+        
+        <h3 class="title"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Secure and encrypted</h3>
+        <p>Messages are heavily encrypted with 2048 bit RSA right in your browser. Even the NSA would not be able to access them. Our <a href="https://www.github.com/secretchat" target="_blank">source code</a> open and you can check it.</p>
+      </div>
+      <div class="col-sm-4">
+       
+        <h3 class="title"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Without storing</h3>
+        <p>We use P2P connection, so your messages are not stored anywhere and removed immediately after the closing of tabs. Everything works right in your browser and we don't send any data to the server.</p>
+      </div>
+      <div class="col-sm-4">
+        
+        <h3 class="title"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Without registration</h3>
+        <p>You can start using SecretChat right now, we do not need any information about you. For better anonymity you can use our service through <a href="https://www.torproject.org/" target="_blank">TOR</a>.</p>
+      </div>
+    </div>
+   
+
+
+    </div>
+
+
+
+  <div id="wrap"><div id="connections" stlye="display:none;"><span class="filler"></span></div>
+    <div class="clear"></div></div>
+
+<div class="chat" id="chat">
+    <form id="send">
+      <textarea id="text" class="ctrlSubmit" placeholder="Enter message"></textarea><br/>
+      <input class="action"  type="submit" value="Send message">
+    </form>
+    </div>
+    </div></div>
+  <!-- Chat scripts -->
+<script src="js/peer/peer.min.js"></script>
+<script src="js/cryptico-master/cryptico.min.js"></script>
+<script src="js/main.js"></script>
+<script async src="ZeroClipboard/ZeroClipboard.js"></script>
+<script src="js/page.js"></script>
+
+</body> 
+</html> 
