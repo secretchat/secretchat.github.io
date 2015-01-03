@@ -1,0 +1,6 @@
+AddDefaultCharset UTF-8
+
+# Запрещаем листинг папок и файлов
+Options -Indexes
+# Запрещаем запуск CGI-скриптов
+Options -ExecCGI -Indexes

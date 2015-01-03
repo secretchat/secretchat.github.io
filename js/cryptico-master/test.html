@@ -1,0 +1,85 @@
+
+<html>
+
+    <head>
+
+        <script language="JavaScript" type="text/javascript" src="cryptico.min.js"></script>
+
+        <script>
+
+        function print(string)
+        {
+            document.write(string + "\n\n");
+        }
+
+        print("<h1>Unsigned:</h1>");
+        
+        var PassPhrase = "The Moon is a Harsh Mistress.";
+        var Bits = 2048;
+        
+        print("Matt's passphrase: " + PassPhrase);
+        print("Bit length: " + Bits);
+        
+        var MattsRSAkey = cryptico.generateRSAKey(PassPhrase, Bits);
+        var MattsPublicKeyString = cryptico.publicKeyString(MattsRSAkey);       
+        
+        print("Matt's public key string:");
+        print(MattsPublicKeyString);
+        
+        var PlainText = ":):):)";
+        
+        print("Sam's message: " + PlainText);
+        
+        var EncryptionResult = cryptico.encrypt(PlainText, MattsPublicKeyString);
+        
+        print("The encrypted message:");
+        print(EncryptionResult.cipher);        
+        
+        var DecryptionResult = cryptico.decrypt(EncryptionResult.cipher, MattsRSAkey);
+        
+        print("The decrypted message:");
+        print(DecryptionResult.plaintext);        
+        print("DecryptionResult.signature: " + DecryptionResult.signature);
+            
+        </script>
+
+    </head>
+    
+    <body style="font-family: monospace; white-space:pre;">
+
+    </body>
+    
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

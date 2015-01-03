@@ -1,0 +1,37 @@
+header {
+      background-color:#212121;
+      top:0;
+      box-shadow: 0 -1px 2px #111111;
+      display:block;
+      height:auto;
+      left:0;
+      position:fixed;
+      width:100%;
+      z-index:100;
+  }
+  header p {
+      font-size:20px !important;
+	  position:relative;
+	  display:block;
+	  margin:20px 0 20px 0; 
+      font-family:tahoma;
+      font-weight:normal;
+	  text-align:center;
+      color:#fff;
+  }
+  header a.stuts,a.stuts:visited{
+      border:none;
+      text-decoration:none;
+      font-family:tahoma;
+      color:#4280af;
+      font-size:14px;
+      line-height:31px;
+  }
+  header a.stuts:hover {
+    color:#fffb89;
+  }
+  header .stuts span {
+      font-size:22px;
+      font-weight:bold;
+      margin-left:5px;
+  }  	
