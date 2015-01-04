@@ -17,22 +17,15 @@ client.on("load", function(client) {
   });
 });
 
-
+// submit form by CTRL+ENTER
 var t = document.getElementsByTagName('textarea');
 var i = 0;
 while(t[i]){
     if(/ctrlSubmit/.test(t[i].className)){
         t[i].onkeyup = function(e){
             e = window.event || e;
-
-            // submit form by Enter
-            if(e.keyCode == 13) {
+            if(e.keyCode == 13 && e.ctrlKey){
 				 $('#send').trigger('submit');
-            }
-
-            // new line by Ctrl+Enter or Shift+Enter
-            if ((e.keyCode == 13 && e.ctrlKey) || e.keyCode == 16) {
-             $("#text").append('\u000A');
             }
         }
     }
