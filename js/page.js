@@ -26,7 +26,7 @@ while(t[i]){
             e = window.event || e;
 
             // submit form by Enter
-            if(e.keyCode == 13 && e.ctrlKey){
+            if(e.keyCode == 13) {
 				 $('#send').trigger('submit');
             }
 
