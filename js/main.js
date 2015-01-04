@@ -155,11 +155,11 @@ $(document).ready(function(PublicKeyString) {
     connectedPeers[requestedPeer] = 1;
   }}});
   // Close a connection.
-  $('#close').click(function() {
+  /*$('#close').click(function() {
     eachActiveConnection(function(c) {
       c.close();
     });
-  });
+  });*/
   // Send a chat message to all active connections.
 
 
@@ -209,6 +209,7 @@ $(document).ready(function(PublicKeyString) {
 // Make sure things clean up properly.
 window.onunload = window.onbeforeunload = function(e) {
   if (!!peer && !peer.destroyed) {
+    console.log('peer destroy');
     peer.destroy();
   }
 };
