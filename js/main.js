@@ -193,6 +193,7 @@ $(document).ready(function(PublicKeyString) {
   function eachActiveConnection(fn) {
     var actives = $('.active');
     var checkedIds = {};
+    console.log(actives);
     actives.each(function() {
       var peerId = $(this).attr('id');
       if (!checkedIds[peerId]) {
