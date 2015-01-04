@@ -98,14 +98,14 @@ function connect(c) {
     var messages = $('<div><em class="notification">The conversation started. Start messaging!</em></div>').addClass('messages');
     chatbox.append(messages);
  
-    // Select connection handler.
+    /*// Select connection handler.
     chatbox.on('click', function() {
       if ($(this).attr('class').indexOf('active') === -1) {
         $(this).addClass('active');
       } else {
         $(this).removeClass('active');
       }
-    });
+    });*/
     $('.filler').hide();
     $('#connections').append(chatbox);
     c.on('data', function(data) {
