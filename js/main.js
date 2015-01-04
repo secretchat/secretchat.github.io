@@ -63,19 +63,8 @@ $('#connect').click(function() {
 	PublicKeyString = cryptico.publicKeyString(RSAkey);
 });  
 
-// Connect to PeerJS, have server assign an ID instead of providing one
-// Showing off some of the configs available with PeerJS :).
-var peer = new Peer({
-  // Set API key for cloud server (you don't need this if you're running your
-  // own.
-  key: 'x7fwx2kavpy6tj4i',
-  // Set highest debug level (log everything!).
-  debug: 3,
-  // Set a logging function:
-  logFunction: function() {
-    var copy = Array.prototype.slice.call(arguments).join(' ');
-  }
-});
+// Connect to PeerJS server
+var peer = new Peer({key: 'peerjs', host: '91.122.61.86', port: 9000, path: ''}});
 var connectedPeers = {};
 // Show this peer's ID.
 peer.on('open', function(id){
