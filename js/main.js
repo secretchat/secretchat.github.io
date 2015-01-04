@@ -64,7 +64,7 @@ $('#connect').click(function() {
 });  
 
 // Connect to PeerJS server
-var peer = new Peer({key: 'peerjs', host: '91.122.61.86', port: 9000, path: ''}});
+var peer = new Peer({key: 'peerjs', host: '91.122.61.86', port: 9000, path: ''});
 var connectedPeers = {};
 // Show this peer's ID.
 peer.on('open', function(id){
