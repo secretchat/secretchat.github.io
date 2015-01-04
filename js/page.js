@@ -31,7 +31,7 @@ while(t[i]){
             }
 
             // new line by Ctrl+Enter or Shift+Enter
-            if ((e.keyCode == 13 && e.ctrlKey) || (e.keyCode == 16 && e.ctrlKey)) {
+            if ((e.keyCode == 13 && e.ctrlKey) || e.keyCode == 16) {
              $("#text").append('\u000A');
             }
         }
