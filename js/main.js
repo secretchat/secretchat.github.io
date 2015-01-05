@@ -68,9 +68,9 @@ var peer = new Peer({key: 'peerjs', host: '91.122.61.86', port: 9000, path: ''})
 var connectedPeers = {};
 // Show this peer's ID.
 peer.on('open', function(id){
-	if (typeof vars.id == 'undefined') {
+
   $('#own_id').val(id + ',' + PassPhrase);
-}
+
 });
 // Await connections from others
 peer.on('connection', connect);
@@ -128,7 +128,7 @@ $(document).ready(function(PublicKeyString) {
   }
   // Connect to a peer
   $('#connect').click(function() {
-  if (vars.id != '') {
+
     var requestedPeer = anotherPeerId;
     if (!connectedPeers[requestedPeer]) {
       // Create connection
@@ -142,7 +142,7 @@ $(document).ready(function(PublicKeyString) {
       });
       c.on('error', function(err) { alert(err); });
     connectedPeers[requestedPeer] = 1;
-  }}});
+  }});
   // Close a connection.
   /*$('#close').click(function() {
     eachActiveConnection(function(c) {
