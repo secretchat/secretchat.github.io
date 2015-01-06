@@ -162,7 +162,8 @@ RSAkey = cryptico.generateRSAKey(PassPhrase, Bits);
 PublicKeyString = cryptico.publicKeyString(RSAkey);    
 
 $('#connect').click(function() {
-      $('.connection_box').hide();
+if ($('#another_id').val().length == 217) {
+  $('.connection_box').hide();
   $('.loading').show(1000, function() {
      console.log('click');
 	anotherId = $('#another_id').val().split(','); // split string to array to get real id and passphrase
@@ -172,6 +173,9 @@ $('#connect').click(function() {
 	RSAkey = cryptico.generateRSAKey(PassPhrase, Bits);
 	PublicKeyString = cryptico.publicKeyString(RSAkey);
 });
+} else {
+	alert('ERROR!\n\nYou entered invalid Secret ID.\nPlease enter valid Secret ID!');
+}
 }); 
 
 // Connect to PeerJS server
@@ -186,7 +190,9 @@ peer.on('open', function(id){
 // Await connections from others
 peer.on('connection', connect);
 peer.on('error', function(err) {
-  console.log(err);
+  alert(err);
+    $('.connection_box').show();
+    $('.loading').hide();
 })
 // Handle a connection object.
 function connect(c) {
@@ -238,6 +244,7 @@ $(document).ready(function(PublicKeyString) {
   }
   // Connect to a peer
   $('#connect').click(function() {
+  	if ($('#another_id').val().length == 217) {
     $('.loading').show(1, function() {
       console.log('click');
     var requestedPeer = anotherPeerId;
@@ -255,6 +262,7 @@ $(document).ready(function(PublicKeyString) {
     connectedPeers[requestedPeer] = 1;
   }
 });
+}
 });
   // Close a connection.
   /*$('#close').click(function() {
@@ -295,7 +303,7 @@ $(document).ready(function(PublicKeyString) {
   function eachActiveConnection(fn) {
     var actives = $('.active');
     var checkedIds = {};
-    console.log(actives);
+
     actives.each(function() {
       var peerId = $(this).attr('id');
       if (!checkedIds[peerId]) {
