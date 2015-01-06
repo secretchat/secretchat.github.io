@@ -161,7 +161,7 @@ PassPhrase = getRandomStr(200);
 RSAkey = cryptico.generateRSAKey(PassPhrase, Bits);
 PublicKeyString = cryptico.publicKeyString(RSAkey);    
 
-$('#connect').click(function() {
+$('#connection_form').submit(function() {
       $('.connection_box').hide();
   $('.loading').show(1000, function() {
      console.log('click');
@@ -237,7 +237,7 @@ $(document).ready(function(PublicKeyString) {
     e.stopPropagation();
   }
   // Connect to a peer
-  $('#connect').click(function() {
+  $('#connection_form').submit(function() {
     $('.loading').show(1, function() {
       console.log('click');
     var requestedPeer = anotherPeerId;
