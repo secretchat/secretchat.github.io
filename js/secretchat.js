@@ -211,7 +211,8 @@ function connect(c) {
     c.on('data', function(data) {
     	console.log(data);
     	// Decrypt data (message)
-      decryptedMsg = cryptico.decrypt(data, RSAkey);
+      console.log(decryptedMsg = cryptico.decrypt(data, RSAkey));
+      console.log(RSAkey);
       console.log(decryptedMsg.plaintext);
       decryptedMsg.plaintext = escapeHtml(decode(decryptedMsg.plaintext));
       console.log(decryptedMsg.plaintext);
