@@ -209,15 +209,9 @@ function connect(c) {
     $('.filler').hide();
     $('#connections').append(chatbox);
     c.on('data', function(data) {
-    	console.log(data);
     	// Decrypt data (message)
-      console.log(decryptedMsg = cryptico.decrypt(data, RSAkey));
-      console.log(RSAkey);
-      console.log(decryptedMsg.plaintext);
+      decryptedMsg = cryptico.decrypt(data, RSAkey);
       decryptedMsg.plaintext = escapeHtml(decode(decryptedMsg.plaintext));
-      console.log(decryptedMsg.plaintext);
-      console.log(decryptedMsg.plaintext.replace(/([^>])\n/g, '$1<br/>'));
-
       messages.append('<div class="message_block partner"><span class="date">' + (new Date()).getHours() + ':' + addZero(new Date().getMinutes()) + '</span> <span class="peer">Partner:</span><div class="message">' + decryptedMsg.plaintext.replace(/([^>])\n/g, '$1<br/>') +
         '</div></div>');
          $("html, body").animate({ scrollTop: $(document).height() }, "slow");
