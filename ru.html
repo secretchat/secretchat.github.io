@@ -2,6 +2,12 @@
 <html lang="ru"> 
 <html  manifest="cache.manifest">
 <head>
+<script type="text/javascript">
+//disable https
+if (window.location.protocol == 'https:') {
+    window.location.protocol = 'http:';
+}
+</script>
 <title>SecretChat</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="Description" content="Анонимный способ быстро и безопасно вести переписку. Без регистрации, одним щелчком мыши.">
