@@ -139,7 +139,7 @@ function addZero(i) {
 
 function getRandomStr(n) {
     result = '';
-    var words = '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOP?ASDFGHJKLZXCVBNM+=-%^$#@!;:\|/><(*){}№.~`_';
+    var words = '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOP?ASDFGHJKLZXCVBNM+=-%^$#@!;:(*){}№.~`_';
         var max_position = words.length - 1;
             for( i = 0; i < n; ++i ) {
                 position = Math.floor ( Math.random() * max_position );
